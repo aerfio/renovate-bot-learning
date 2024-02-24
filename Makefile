@@ -3,7 +3,7 @@ export GOBIN=$(CURRENT_DIR)/bin
 
 all: format
 
-GOFUMPT_VERSION = v0.5.0 # old version of gofumpt
+GOFUMPT_VERSION = v0.6.0
 GOFUMPT = bin/gofumpt-${GOFUMPT_VERSION}
 ${GOFUMPT}:
 	go install mvdan.cc/gofumpt@$(GOFUMPT_VERSION)
