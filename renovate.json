@@ -1,0 +1,57 @@
+{
+  "$schema": "https://docs.renovatebot.com/renovate-schema.json",
+  "extends": [
+    "config:recommended"
+  ],
+  "prConcurrentLimit": 0,
+  "prHourlyLimit": 0,
+  "postUpdateOptions": [
+    "gomodTidy"
+  ],
+  "labels": [
+    "automated"
+  ],
+  "vulnerabilityAlerts": {
+    "enabled": true
+  },
+  "osvVulnerabilityAlerts": true,
+  "packageRules": [
+    {
+      "description": "Single PR for all kubernetes dependency updates, as they usually are all linked",
+      "matchDatasources": [
+        "go"
+      ],
+      "groupName": "kubernetes deps",
+      "matchPackagePrefixes": [
+        "k8s.io",
+        "sigs.k8s.io"
+      ]
+    }
+  ],
+  "regexManagers": [
+    {
+      "fileMatch": [
+        "^\\.github\\/workflows\\/[^/]+\\.ya?ml$",
+        "^Makefile$"
+      ],
+      "matchStrings": [
+        "GOFUMPT_VERSION = v(?<currentValue>.*?)\\n"
+      ],
+      "datasourceTemplate": "github-tags",
+      "depNameTemplate": "mvdan/gofumpt",
+      "extractVersionTemplate": "^v(?<version>.*)$"
+    },
+    {
+      "fileMatch": [
+        "^\\.github\\/workflows\\/[^/]+\\.ya?ml$",
+        "^Makefile$"
+      ],
+      "matchStrings": [
+        "GCI_VERSION = v(?<currentValue>.*?)\\n"
+      ],
+      "datasourceTemplate": "github-tags",
+      "depNameTemplate": "daixiang0/gci",
+      "extractVersionTemplate": "^v(?<version>.*)$"
+    }
+  ]
+}
