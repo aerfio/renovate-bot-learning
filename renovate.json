@@ -35,11 +35,22 @@
         "^Makefile$"
       ],
       "matchStrings": [
-        "GOFUMPT_VERSION: 'v(?<currentValue>.*?)'\\n",
+        "GOFUMPT_VERSION: 'v(?<currentValue>.*?)'\\n"
+      ],
+      "datasourceTemplate": "github-tags",
+      "depNameTemplate": "https://github.com/mvdan/gofumpt",
+      "extractVersionTemplate": "^v(?<version>.*)$"
+    },
+    {
+      "fileMatch": [
+        "^\\.github\\/workflows\\/[^/]+\\.ya?ml$",
+        "^Makefile$"
+      ],
+      "matchStrings": [
         "GCI_VERSION = v(?<currentValue>.*?)\\n"
       ],
       "datasourceTemplate": "github-tags",
-      "depNameTemplate": "golangci/golangci-lint",
+      "depNameTemplate": "github.com/daixiang0/gci",
       "extractVersionTemplate": "^v(?<version>.*)$"
     }
   ]
