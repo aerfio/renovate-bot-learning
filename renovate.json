@@ -35,7 +35,7 @@
         "^Makefile$"
       ],
       "matchStrings": [
-        "GOFUMPT_VERSION: 'v(?<currentValue>.*?)'\\n"
+        "GOFUMPT_VERSION = v(?<currentValue>.*?)\\n"
       ],
       "datasourceTemplate": "github-tags",
       "depNameTemplate": "mvdan/gofumpt",
