@@ -1,0 +1,11 @@
+apiVersion: v2
+name: example
+type: application
+version: 0.0.0
+appVersion: "latest"
+
+dependencies:
+  - name: grafana-agent
+    version: "0.32.*" # old version of grafana-agent subchart
+    repository: https://grafana.github.io/helm-charts
+    condition: grafana-agent.enabled
