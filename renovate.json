@@ -38,7 +38,7 @@
         "GOFUMPT_VERSION: 'v(?<currentValue>.*?)'\\n"
       ],
       "datasourceTemplate": "github-tags",
-      "depNameTemplate": "https://github.com/mvdan/gofumpt",
+      "depNameTemplate": "mvdan/gofumpt",
       "extractVersionTemplate": "^v(?<version>.*)$"
     },
     {
@@ -50,7 +50,7 @@
         "GCI_VERSION = v(?<currentValue>.*?)\\n"
       ],
       "datasourceTemplate": "github-tags",
-      "depNameTemplate": "github.com/daixiang0/gci",
+      "depNameTemplate": "daixiang0/gci",
       "extractVersionTemplate": "^v(?<version>.*)$"
     }
   ]
