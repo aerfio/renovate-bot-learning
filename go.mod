@@ -4,9 +4,9 @@ go 1.21.7 // old go version
 
 require (
 	aerf.io/k8sutils v0.0.0-20240207100300-99b2fa835e72 // old dep that is untagged
-	k8s.io/api v0.29.1 // old dep that is tagged
-	k8s.io/apimachinery v0.29.1
-	k8s.io/client-go v0.29.1
+	k8s.io/api v0.29.2 // old dep that is tagged
+	k8s.io/apimachinery v0.29.2
+	k8s.io/client-go v0.29.2
 	sigs.k8s.io/yaml v1.4.0
 )
 
