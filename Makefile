@@ -9,7 +9,7 @@ ${GOFUMPT}:
 	go install mvdan.cc/gofumpt@$(GOFUMPT_VERSION)
 	mv ${GOBIN}/gofumpt ${GOFUMPT}
 
-GCI_VERSION = v0.13.0
+GCI_VERSION = v0.13.4
 GCI = bin/gci-${GCI_VERSION}
 ${GCI}:
 	go install github.com/daixiang0/gci@$(GCI_VERSION)
