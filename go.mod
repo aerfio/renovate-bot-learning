@@ -3,7 +3,7 @@ module aerf.io/renovate-learning
 go 1.21.7 // old go version
 
 require (
-	aerf.io/k8sutils v0.0.0-20240415111246-287d19b89afe // old dep that is untagged
+	aerf.io/k8sutils v0.0.0-20240415111334-bdb65e65d3c1 // old dep that is untagged
 	k8s.io/api v0.29.3 // old dep that is tagged
 	k8s.io/apimachinery v0.29.3
 	k8s.io/client-go v0.29.3
@@ -42,7 +42,7 @@ require (
 	k8s.io/klog/v2 v2.120.1 // indirect
 	k8s.io/kube-openapi v0.0.0-20240209001042-7a0d5b415232 // indirect
 	k8s.io/utils v0.0.0-20240102154912-e7106e64919e // indirect
-	sigs.k8s.io/controller-runtime v0.17.0 // indirect
+	sigs.k8s.io/controller-runtime v0.17.3 // indirect
 	sigs.k8s.io/json v0.0.0-20221116044647-bc3834ca7abd // indirect
 	sigs.k8s.io/structured-merge-diff/v4 v4.4.1 // indirect
 )
