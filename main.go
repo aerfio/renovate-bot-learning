@@ -4,11 +4,10 @@ import (
 	"fmt"
 
 	"aerf.io/k8sutils"
-	"sigs.k8s.io/yaml"
-
 	corev1 "k8s.io/api/core/v1"
 	metav1 "k8s.io/apimachinery/pkg/apis/meta/v1"
 	"k8s.io/client-go/kubernetes/scheme"
+	"sigs.k8s.io/yaml"
 )
 
 func main() {
