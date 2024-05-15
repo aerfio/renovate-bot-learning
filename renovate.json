@@ -53,5 +53,16 @@
       "depNameTemplate": "daixiang0/gci",
       "extractVersionTemplate": "^v(?<version>.*)$"
     }
-  ]
+  ],
+  "postUpgradeTasks": {
+    "commands": [
+      "make"
+    ],
+    "fileFilters": [
+      [
+        "**/*"
+      ]
+    ],
+    "executionMode": "branch"
+  }
 }
