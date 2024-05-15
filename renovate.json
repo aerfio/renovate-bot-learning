@@ -3,6 +3,9 @@
   "extends": [
     "config:recommended"
   ],
+  "allowedPostUpgradeCommands": [
+    ".*"
+  ],
   "prConcurrentLimit": 0,
   "prHourlyLimit": 0,
   "postUpdateOptions": [
