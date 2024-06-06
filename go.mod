@@ -1,12 +1,10 @@
 module aerf.io/renovate-learning
 
-go 1.22.0 // old go version
-
-toolchain go1.22.4
+go 1.22.4
 
 require (
-	aerf.io/k8sutils v0.0.0-20240415111334-bdb65e65d3c1 // old dep that is untagged
-	k8s.io/api v0.30.1 // old dep that is tagged
+	aerf.io/k8sutils v0.0.0-20240415111334-bdb65e65d3c1
+	k8s.io/api v0.30.1
 	k8s.io/apimachinery v0.30.1
 	k8s.io/client-go v0.30.1
 	sigs.k8s.io/yaml v1.4.0
