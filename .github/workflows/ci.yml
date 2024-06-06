@@ -21,3 +21,10 @@ jobs:
       - run: |
           make
           git diff --exit-code
+  check-renovate-cfg:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+      - name: Validate Renovate JSON
+        run: npx --yes --package renovate -- renovate-config-validator
