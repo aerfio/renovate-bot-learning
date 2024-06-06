@@ -13,6 +13,7 @@ name: Renovate
 
 env:
   LOG_LEVEL: "info"
+  RENOVATE_VERSION: 37.395-full # renovate: datasource=docker depName=renovate packageName=ghcr.io/renovatebot/renovate
 
 jobs:
   renovate:
@@ -34,4 +35,4 @@ jobs:
         with:
           configurationFile: renovate.json
           token: "${{ secrets.RENOVATE_TOKEN }}"
-          renovate-image: ghcr.io/renovatebot/renovate:full
+          renovate-version: ${{ env.RENOVATE_VERSION }}
