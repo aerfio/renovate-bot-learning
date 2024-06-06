@@ -6,6 +6,6 @@ appVersion: "latest"
 
 dependencies:
   - name: grafana-agent
-    version: "0.38.*" # old version of grafana-agent subchart
+    version: "0.40.*" # old version of grafana-agent subchart
     repository: https://grafana.github.io/helm-charts
     condition: grafana-agent.enabled
