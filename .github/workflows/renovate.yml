@@ -30,7 +30,7 @@ jobs:
           # Use GitHub API to create commits
           RENOVATE_PLATFORM_COMMIT: "true"
           LOG_LEVEL: ${{ github.event.inputs.logLevel || env.LOG_LEVEL }}
-          RENOVATE_ALLOWED_POST_UPGRADE_COMMANDS: '["*"]'
+          RENOVATE_ALLOWED_POST_UPGRADE_COMMANDS: '[".*"]'
         with:
           configurationFile: renovate.json
           token: "${{ secrets.RENOVATE_TOKEN }}"
