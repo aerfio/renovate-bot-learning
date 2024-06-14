@@ -4,9 +4,9 @@ go 1.22.4
 
 require (
 	aerf.io/k8sutils v0.0.0-20240415111334-bdb65e65d3c1
-	k8s.io/api v0.30.1
-	k8s.io/apimachinery v0.30.1
-	k8s.io/client-go v0.30.1
+	k8s.io/api v0.30.2
+	k8s.io/apimachinery v0.30.2
+	k8s.io/client-go v0.30.2
 	sigs.k8s.io/yaml v1.4.0
 )
 
