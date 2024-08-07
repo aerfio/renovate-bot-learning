@@ -51,15 +51,13 @@
   ],
   "customManagers": [
     {
-      "customType": "regex",
-      "description": "Update _VERSION variables in github action envs",
+      "description": "Update `version:` and `_VERSION:` variables in github workflows",
       "fileMatch": [
-        "^\\.github\\/workflows\\/[^/]+\\.ya?ml$"
+        "^\\.github/workflows/[^/]+\\.ya?ml$"
       ],
       "matchStrings": [
-        "# renovate: datasource=(?<datasource>.*?) depName=(?<depName>.*?)\\s+.+version: (?<currentValue>.*)",
-        "# renovate: datasource=(?<datasource>.*?) depName=(?<depName>.*?)\\s+.+_VERSION: (?<currentValue>.*)",
-        "#\\s?renovate: datasource=(?<datasource>[a-z-]+?)(?: depName=(?<depName>.+?))? packageName=(?<packageName>.+?)(?: versioning=(?<versioning>[a-z-]+?))?\\s+.+?_VERSION=(?<currentValue>.+?)\\s"
+        "\\s+(?:[a-z]-)?version: (?<currentValue>.+?) # renovate: datasource=(?<datasource>.+?) depName=(?<depName>.+?)(?: (?:packageName|lookupName)=(?<packageName>.+?))?(?: versioning=(?<versioning>.+?))?\\s",
+        "\\s*[A-Z_]+?_VERSION: (?<currentValue>.+?) # renovate: datasource=(?<datasource>.+?) depName=(?<depName>.+?)(?: (?:packageName|lookupName)=(?<packageName>.+?))?(?: versioning=(?<versioning>.+?))?\\s"
       ]
     }
   ],
