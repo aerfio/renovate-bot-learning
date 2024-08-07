@@ -10,6 +10,9 @@ name: Renovate
         type: string
   schedule:
     - cron: "0 8 * * *"
+  push:
+    branches:
+      - main
 
 env:
   LOG_LEVEL: "info"
