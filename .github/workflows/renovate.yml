@@ -14,9 +14,14 @@ name: Renovate
     branches:
       - main
 
+concurrency:
+  cancel-in-progress: true
+  group: ${{ github.workflow }}-${{ github.ref }}
+
 env:
   LOG_LEVEL: "info"
-  RENOVATE_VERSION: 37.394-full # renovate: datasource=docker depName=renovate packageName=ghcr.io/renovatebot/renovate
+  # renovate: datasource=docker depName=renovate packageName=ghcr.io/renovatebot/renovate
+  RENOVATE_VERSION: 37.394-full
 
 jobs:
   renovate:

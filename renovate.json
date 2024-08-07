@@ -49,6 +49,20 @@
       "matchFileNames": []
     }
   ],
+  "customManagers": [
+    {
+      "customType": "regex",
+      "description": "Update _VERSION variables in github action envs",
+      "fileMatch": [
+        "^\\.github\\/workflows\\/[^/]+\\.ya?ml$"
+      ],
+      "matchStrings": [
+        "# renovate: datasource=(?<datasource>.*?) depName=(?<depName>.*?)\\s+.+version: (?<currentValue>.*)",
+        "# renovate: datasource=(?<datasource>.*?) depName=(?<depName>.*?)\\s+.+_VERSION: (?<currentValue>.*)",
+        "#\\s?renovate: datasource=(?<datasource>[a-z-]+?)(?: depName=(?<depName>.+?))? packageName=(?<packageName>.+?)(?: versioning=(?<versioning>[a-z-]+?))?\\s+.+?_VERSION=(?<currentValue>.+?)\\s"
+      ]
+    }
+  ],
   "regexManagers": [
     {
       "fileMatch": [
