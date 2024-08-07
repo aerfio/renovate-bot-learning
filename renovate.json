@@ -17,6 +17,7 @@
   },
   "osvVulnerabilityAlerts": true,
   "crossplane": {
+    "enabled": true,
     "fileMatch": [
       "crossplane/.+\\.yaml$"
     ]
@@ -40,13 +41,6 @@
       ],
       "rangeStrategy": "bump",
       "groupName": "golang version"
-    },
-    {
-      "description": "Bump crossplane Providers, Configurations and Functions",
-      "matchDatasources": [
-        "crossplane"
-      ],
-      "matchFileNames": []
     }
   ],
   "customManagers": [
