@@ -19,7 +19,7 @@ concurrency:
   group: ${{ github.workflow }}-${{ github.ref }}
 
 env:
-  LOG_LEVEL: "info"
+  LOG_LEVEL: "debug"
   RENOVATE_VERSION: 38.21-full # renovate: datasource=docker depName=renovate packageName=ghcr.io/renovatebot/renovate
 
 jobs:
