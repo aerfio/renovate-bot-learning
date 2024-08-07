@@ -5,7 +5,19 @@ version: 0.0.0
 appVersion: "latest"
 
 dependencies:
-  - name: grafana-agent
-    version: "0.42.*" # old version of grafana-agent subchart
+  - name: node-feature-discovery
+    version: "0.*"
+    repository: https://kubernetes-sigs.github.io/node-feature-discovery/charts
+    condition: node-feature-discovery.enabled
+  - name: alloy
+    version: "0.*"
     repository: https://grafana.github.io/helm-charts
-    condition: grafana-agent.enabled
+    condition: alloy.enabled
+  - name: crossplane
+    version: "1.*"
+    repository: https://charts.crossplane.io/stable
+    condition: crossplane.enabled
+  - name: nats
+    repository: https://nats-io.github.io/k8s/helm/charts/
+    version: "1.*"
+    condition: nats.enabled

@@ -6,7 +6,8 @@
   "prConcurrentLimit": 0,
   "prHourlyLimit": 0,
   "postUpdateOptions": [
-    "gomodTidy"
+    "gomodTidy",
+    "gomodUpdateImportPaths"
   ],
   "labels": [
     "automated"
@@ -15,6 +16,11 @@
     "enabled": true
   },
   "osvVulnerabilityAlerts": true,
+  "crossplane": {
+    "fileMatch": [
+      "crossplane/.+\\.yaml$"
+    ]
+  },
   "packageRules": [
     {
       "description": "Single PR for all kubernetes dependency updates, as they usually are all linked",
@@ -26,6 +32,21 @@
         "k8s.io",
         "sigs.k8s.io"
       ]
+    },
+    {
+      "description": "Group all go version updates",
+      "matchDatasources": [
+        "golang-version"
+      ],
+      "rangeStrategy": "bump",
+      "groupName": "golang version"
+    },
+    {
+      "description": "Bump crossplane Providers, Configurations and Functions",
+      "matchDatasources": [
+        "crossplane"
+      ],
+      "matchFileNames": []
     }
   ],
   "regexManagers": [

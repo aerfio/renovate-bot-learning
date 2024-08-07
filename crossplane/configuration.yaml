@@ -1,0 +1,20 @@
+apiVersion: meta.pkg.crossplane.io/v1
+kind: Configuration
+metadata:
+  name: config
+spec:
+  crossplane:
+    version: ">=v1.16.0"
+  dependsOn:
+    - provider: xpkg.upbound.io/upbound/provider-terraform
+      version: ">=0.16.0"
+    - provider: xpkg.upbound.io/crossplane-contrib/provider-helm
+      version: ">=0.18.1"
+    - provider: xpkg.upbound.io/crossplane-contrib/provider-kubernetes
+      version: ">=v0.14.1"
+    - function: xpkg.upbound.io/crossplane-contrib/function-auto-ready
+      version: ">=v0.2.1"
+    - function: xpkg.upbound.io/crossplane-contrib/function-go-templating
+      version: ">=v0.4.1"
+    - function: xpkg.upbound.io/crossplane-contrib/function-sequencer
+      version: ">=v0.1.2"
