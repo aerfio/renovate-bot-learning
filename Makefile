@@ -17,10 +17,10 @@ ${GCI}:
 
 .PHONY: format
 format: ${GCI} ${GOFUMPT}
-	$(GCI) write . --skip-generated -s standard -s default -s "prefix($(shell go list -m))" -s blank -s dot --custom-order --skip-vendor
+	$(GCI) write . --skip-generated -s standard -s default -s "Prefix($(shell go list -m))" -s blank -s dot --custom-order --skip-vendor
 	$(GOFUMPT) -w -extra -l .
 
-CONTROLLER_TOOLS_VERSION = v0.14.0
+CONTROLLER_TOOLS_VERSION = v0.16.0
 CONTROLLER_GEN ?= bin/controller-gen-${CONTROLLER_TOOLS_VERSION}
 ${CONTROLLER_GEN}:
 	go install sigs.k8s.io/controller-tools/cmd/controller-gen@$(CONTROLLER_TOOLS_VERSION)

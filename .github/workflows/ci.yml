@@ -15,9 +15,16 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
       - name: Setup Go
-        uses: actions/setup-go@v4
+        uses: actions/setup-go@v5
         with:
           go-version-file: go.mod
       - run: |
           make
           git diff --exit-code
+  check-renovate-cfg:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+      - name: Validate Renovate JSON
+        run: npx --yes --package renovate -- renovate-config-validator

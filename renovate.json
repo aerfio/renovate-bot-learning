@@ -3,13 +3,11 @@
   "extends": [
     "config:recommended"
   ],
-  "allowedPostUpgradeCommands": [
-    ".*"
-  ],
   "prConcurrentLimit": 0,
   "prHourlyLimit": 0,
   "postUpdateOptions": [
-    "gomodTidy"
+    "gomodTidy",
+    "gomodUpdateImportPaths"
   ],
   "labels": [
     "automated"
@@ -18,6 +16,12 @@
     "enabled": true
   },
   "osvVulnerabilityAlerts": true,
+  "crossplane": {
+    "enabled": true,
+    "fileMatch": [
+      "crossplane/.+\\.yaml$"
+    ]
+  },
   "packageRules": [
     {
       "description": "Single PR for all kubernetes dependency updates, as they usually are all linked",
@@ -28,6 +32,26 @@
       "matchPackagePrefixes": [
         "k8s.io",
         "sigs.k8s.io"
+      ]
+    },
+    {
+      "description": "Group all go version updates",
+      "matchDatasources": [
+        "golang-version"
+      ],
+      "rangeStrategy": "bump",
+      "groupName": "golang version"
+    }
+  ],
+  "customManagers": [
+    {
+      "description": "Update `version:` and `_VERSION:` variables in github workflows",
+      "fileMatch": [
+        "^\\.github/workflows/[^/]+\\.ya?ml$"
+      ],
+      "matchStrings": [
+        "\\s+(?:[a-z]-)?version: (?<currentValue>.+?) # renovate: datasource=(?<datasource>.+?) depName=(?<depName>.+?)(?: (?:packageName|lookupName)=(?<packageName>.+?))?(?: versioning=(?<versioning>.+?))?\\s",
+        "\\s*[A-Z_]+?_VERSION: (?<currentValue>.+?) # renovate: datasource=(?<datasource>.+?) depName=(?<depName>.+?)(?: (?:packageName|lookupName)=(?<packageName>.+?))?(?: versioning=(?<versioning>.+?))?\\s"
       ]
     }
   ],

@@ -10,9 +10,17 @@ name: Renovate
         type: string
   schedule:
     - cron: "0 8 * * *"
+  push:
+    branches:
+      - main
+
+concurrency:
+  cancel-in-progress: true
+  group: ${{ github.workflow }}-${{ github.ref }}
 
 env:
-  LOG_LEVEL: "info"
+  LOG_LEVEL: "debug"
+  RENOVATE_VERSION: 38.26-full # renovate: datasource=docker depName=renovate packageName=ghcr.io/renovatebot/renovate
 
 jobs:
   renovate:
@@ -23,23 +31,15 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v4
-      - name: Validate Renovate JSON
-        run: npx --yes --package renovate -- renovate-config-validator
-      - name: Get token
-        id: get-github-app-token
-        uses: actions/create-github-app-token@v1
-        with:
-          app-id: ${{ secrets.RENOVATE_GITHUB_APP_ID }}
-          private-key: ${{ secrets.RENOVATE_GITHUB_APP_PRIVATE_KEY }}
-
       - name: Self-hosted Renovate
-        uses: renovatebot/github-action@v40.1.11
+        uses: renovatebot/github-action@v40.2.6
         env:
           RENOVATE_REPOSITORIES: ${{ github.repository }}
           # Use GitHub API to create commits
           RENOVATE_PLATFORM_COMMIT: "true"
           LOG_LEVEL: ${{ github.event.inputs.logLevel || env.LOG_LEVEL }}
-          RENOVATE_ALLOWED_POST_UPGRADE_COMMANDS: '["^make$"]'
+          RENOVATE_ALLOWED_POST_UPGRADE_COMMANDS: '[".*"]'
         with:
           configurationFile: renovate.json
-          token: "${{ steps.get-github-app-token.outputs.token }}"
+          token: "${{ secrets.RENOVATE_TOKEN }}"
+          renovate-version: ${{ env.RENOVATE_VERSION }}
