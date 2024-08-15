@@ -55,6 +55,18 @@
       "datasourceTemplate": "github-tags",
       "depNameTemplate": "daixiang0/gci",
       "extractVersionTemplate": "^v(?<version>.*)$"
+    },
+    {
+      "fileMatch": [
+        "^\\.github\\/workflows\\/[^/]+\\.ya?ml$",
+        "^Makefile$"
+      ],
+      "matchStrings": [
+        "CONTROLLER_TOOLS_VERSION = v(?<currentValue>.*?)\\n"
+      ],
+      "datasourceTemplate": "github-tags",
+      "depNameTemplate": "kubernetes-sigs/controller-tools",
+      "extractVersionTemplate": "^v(?<version>.*)$"
     }
   ],
   "postUpgradeTasks": {
