@@ -11,14 +11,13 @@ import (
 )
 
 func main() {
-	// use "old" version of "k8s.io/api/core/v1"
 	obj := &corev1.ConfigMap{
 		ObjectMeta: metav1.ObjectMeta{
 			Name:      "name",
 			Namespace: "ns",
 		},
 	}
-	// use "old" version of k8sutils
+
 	err := k8sutils.AddTypeInformationToObject(scheme.Scheme, obj)
 	if err != nil {
 		panic(err)

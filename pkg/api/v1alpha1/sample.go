@@ -6,8 +6,8 @@ import (
 )
 
 type SampleSpec struct {
-	Foo             string     `json:"foo"`
-	EmbeddedPodSpec corev1.Pod `json:"embeddedPodSpec"`
+	Foo             string         `json:"foo"`
+	EmbeddedPodSpec corev1.PodSpec `json:"embeddedPodSpec"`
 }
 
 //+kubebuilder:object:root=true
