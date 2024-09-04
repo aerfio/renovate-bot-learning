@@ -1,5 +1,5 @@
-aerf.io/k8sutils v0.0.0-20240805171723-4ba878ba35f7 h1:0vKDtnWIOQGVPIg4mFOmbYoHq/ii+QWOfsUTyodG2DQ=
-aerf.io/k8sutils v0.0.0-20240805171723-4ba878ba35f7/go.mod h1:ihaTLed976tcskP4OQyLzdHjJr0JKvtptbbdvXZhNe8=
+aerf.io/k8sutils v0.0.0-20240903213952-1ddd1cc6b3ee h1:ZKecw0Bx0VGE4TWv4AeHK5psgkxPn4EIGnn83tC0TfI=
+aerf.io/k8sutils v0.0.0-20240903213952-1ddd1cc6b3ee/go.mod h1:oRhrGB0ht+0O9FMmJ020OslLtKHsuDOQx/aiveffnQU=
 github.com/davecgh/go-spew v1.1.0/go.mod h1:J7Y8YcW2NihsgmVo/mv3lAwl/skON4iLHjSsI+c5H38=
 github.com/davecgh/go-spew v1.1.1/go.mod h1:J7Y8YcW2NihsgmVo/mv3lAwl/skON4iLHjSsI+c5H38=
 github.com/davecgh/go-spew v1.1.2-0.20180830191138-d8f796af33cc h1:U9qPSI2PIWSS1VwoXQT9A3Wy9MM3WgvqSxFWenqJduM=
