@@ -3,7 +3,7 @@ module aerf.io/renovate-learning
 go 1.23.0
 
 require (
-	aerf.io/k8sutils v0.0.0-20240805171723-4ba878ba35f7
+	aerf.io/k8sutils v0.0.0-20240903213952-1ddd1cc6b3ee
 	k8s.io/api v0.31.0
 	k8s.io/apimachinery v0.31.0
 	k8s.io/client-go v0.31.0
