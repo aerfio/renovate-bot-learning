@@ -3,7 +3,7 @@ module aerf.io/renovate-learning
 go 1.23.3
 
 require (
-	aerf.io/k8sutils v0.0.0-20241020181625-1accee10ea2a
+	aerf.io/k8sutils v0.0.0-20241108135141-492c3fe8c847
 	k8s.io/api v0.31.2
 	k8s.io/apimachinery v0.31.2
 	k8s.io/client-go v0.31.2
@@ -34,7 +34,7 @@ require (
 	github.com/x448/float16 v0.8.4 // indirect
 	golang.org/x/net v0.26.0 // indirect
 	golang.org/x/oauth2 v0.21.0 // indirect
-	golang.org/x/sys v0.21.0 // indirect
+	golang.org/x/sys v0.25.0 // indirect
 	golang.org/x/term v0.21.0 // indirect
 	golang.org/x/text v0.16.0 // indirect
 	golang.org/x/time v0.5.0 // indirect
