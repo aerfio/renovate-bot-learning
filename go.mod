@@ -1,6 +1,6 @@
 module aerf.io/renovate-learning
 
-go 1.23.4
+go 1.23.5
 
 require (
 	aerf.io/k8sutils v0.0.0-20241201173930-75192df1f39c
