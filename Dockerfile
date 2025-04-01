@@ -1,5 +1,5 @@
 # old go version
-FROM golang:1.24.0 as builder
+FROM golang:1.24.1 as builder
 
 WORKDIR /workspace
 
