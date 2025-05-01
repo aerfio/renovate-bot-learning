@@ -1,15 +1,15 @@
 dependencies:
 - name: node-feature-discovery
   repository: https://kubernetes-sigs.github.io/node-feature-discovery/charts
-  version: 0.16.3
+  version: 0.17.3
 - name: alloy
   repository: https://grafana.github.io/helm-charts
-  version: 0.6.0
+  version: 1.0.2
 - name: crossplane
   repository: https://charts.crossplane.io/stable
-  version: 1.16.0
+  version: 1.19.1
 - name: nats
   repository: https://nats-io.github.io/k8s/helm/charts/
-  version: 1.2.2
-digest: sha256:4786bdea64fa9947b8a5163766dbd73b5c064a303e48c16521a9951690864c60
-generated: "2024-08-07T21:06:07.780598+02:00"
+  version: 1.3.4
+digest: sha256:9deba762298a4c29b1e8b390fc9ee55e2cca4ae75560be397b4e433f1b1330ed
+generated: "2025-05-01T08:22:18.24118207Z"
