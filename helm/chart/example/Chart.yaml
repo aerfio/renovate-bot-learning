@@ -10,7 +10,7 @@ dependencies:
     repository: https://kubernetes-sigs.github.io/node-feature-discovery/charts
     condition: node-feature-discovery.enabled
   - name: alloy
-    version: "0.*"
+    version: "1.*"
     repository: https://grafana.github.io/helm-charts
     condition: alloy.enabled
   - name: crossplane
